@@ -15,15 +15,17 @@ def main():
     df = make_dataframe(maccs)
     df.columns = df.columns.astype(str)
     y_pred = model.predict(df)
+    y_pred = y_pred.tolist()
+    x = y_pred.count('Berinteraksi')
 
-    if 'Berinteraksi' in y_pred:
-        hasil = 'Berinteraksi'
+    if x >= 3:
+        hasil = 'Berpotensi'
     else:
-        hasil = 'Tidak Berinteraksi'
+        hasil = 'Tidak Berpotensi'
 
     if predict:
-        try:
-            st.success(f"Senyawa diatas {hasil} terhadap opesitas")
+        try:    
+            st.success(f"Senyawa diatas {hasil} terhadap obesitas")
         except:
             st.error("coba lagi")
 
