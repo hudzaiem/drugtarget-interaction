@@ -25,7 +25,7 @@ def main():
 
     if predict:
         try:    
-            st.success(f"Senyawa diatas {hasil} terhadap obesitas")
+            st.success(f"Senyawa diatas {hasil} terhadap obesitas. Berinteraksi terhadap {x} protein")
         except:
             st.error("coba lagi")
 
